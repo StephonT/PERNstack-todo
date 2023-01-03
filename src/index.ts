@@ -1,6 +1,11 @@
 import express from "express";
 import cors from "cors";
 import { json, urlencoded } from "body-parser";
+import knex from "./db/knex";
+import { Model } from "objection";
+
+//passing in knex configuration from knex.ts
+Model.knex(knex);
 
 const app = express();
 
