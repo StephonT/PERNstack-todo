@@ -4,7 +4,7 @@ export = {
     connection: {
       host: "localhost",
       port: "5432",
-      database: "PERNstack-todo",
+      database: "perntodo",
       user: "postgres",
       password: "postgres",
     },
