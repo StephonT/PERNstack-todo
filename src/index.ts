@@ -3,6 +3,7 @@ import cors from "cors";
 import { json, urlencoded } from "body-parser";
 import knex from "./db/knex";
 import { Model } from "objection";
+import todos from "./db/routes/todos"
 
 //passing in knex configuration from knex.ts
 Model.knex(knex);
@@ -22,5 +23,8 @@ app.listen(port, () => {
 app.get("/", (_, res) => {
   res.send("Hello World!");
 });
+
+//This is going to use the todos.ts file and all of the functions inside it.
+app.use("/todo", todos)
 
 export default app;
