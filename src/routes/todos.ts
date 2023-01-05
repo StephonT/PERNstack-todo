@@ -1,7 +1,7 @@
 // CRUD operations
 
 import express from "express";
-import { Todo } from "../models/Todo";
+import { Todo } from "../db/models/Todo";
 
 const router = express.Router();
 
@@ -50,6 +50,8 @@ router.patch("/:id", async (req, res) => {
 
 //Delete todo
 router.delete("/:id", async (req, res) => {
+  const todo = req.body.todo;
+
   const id = req.params.id;
   await Todo.query().deleteById(id);
   res.send("Todo sucessfully deleted.");
