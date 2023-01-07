@@ -54,7 +54,7 @@ router.delete("/:id", async (req, res) => {
 
   const id = req.params.id;
   await Todo.query().deleteById(id);
-  res.send("Todo sucessfully deleted.");
+  res.send("Todo was sucessfully deleted.");
 });
 
 export default router;
