@@ -5,13 +5,16 @@ import { QueryClient, QueryClientProvider } from "react-query";
 //Allow us to see what is happening in realtime on our application 
 import { ReactQueryDevtools } from "react-query/devtools";
 
-
+const queryClient = new QueryClient();
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <QueryClientProvider client={queryClient}>
+      <ReactQueryDevtools />
+      <App />  
+    </QueryClientProvider>  
   </React.StrictMode>
 );
